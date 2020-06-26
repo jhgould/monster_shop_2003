@@ -1,0 +1,92 @@
+            Prefix Verb   URI Pattern                                                 Controller#Action
+                   GET    /                                                           welcome#index
+    merchant_items GET    /merchants/:merchant_id/items(.:format)                     items#index
+                   POST   /merchants/:merchant_id/items(.:format)                     items#create
+ new_merchant_item GET    /merchants/:merchant_id/items/new(.:format)                 items#new
+         merchants GET    /merchants(.:format)                                        merchants#index
+                   POST   /merchants(.:format)                                        merchants#create
+      new_merchant GET    /merchants/new(.:format)                                    merchants#new
+     edit_merchant GET    /merchants/:id/edit(.:format)                               merchants#edit
+          merchant GET    /merchants/:id(.:format)                                    merchants#show
+                   PATCH  /merchants/:id(.:format)                                    merchants#update
+                   PUT    /merchants/:id(.:format)                                    merchants#update
+                   DELETE /merchants/:id(.:format)                                    merchants#destroy
+      item_reviews GET    /items/:item_id/reviews(.:format)                           reviews#index
+                   POST   /items/:item_id/reviews(.:format)                           reviews#create
+   new_item_review GET    /items/:item_id/reviews/new(.:format)                       reviews#new
+  edit_item_review GET    /items/:item_id/reviews/:id/edit(.:format)                  reviews#edit
+       item_review GET    /items/:item_id/reviews/:id(.:format)                       reviews#show
+                   PATCH  /items/:item_id/reviews/:id(.:format)                       reviews#update
+                   PUT    /items/:item_id/reviews/:id(.:format)                       reviews#update
+                   DELETE /items/:item_id/reviews/:id(.:format)                       reviews#destroy
+             items GET    /items(.:format)                                            items#index
+                   POST   /items(.:format)                                            items#create
+          new_item GET    /items/new(.:format)                                        items#new
+         edit_item GET    /items/:id/edit(.:format)                                   items#edit
+              item GET    /items/:id(.:format)                                        items#show
+                   PATCH  /items/:id(.:format)                                        items#update
+                   PUT    /items/:id(.:format)                                        items#update
+                   DELETE /items/:id(.:format)                                        items#destroy
+       edit_review GET    /reviews/:id/edit(.:format)                                 reviews#edit
+            review PATCH  /reviews/:id(.:format)                                      reviews#update
+                   PUT    /reviews/:id(.:format)                                      reviews#update
+                   DELETE /reviews/:id(.:format)                                      reviews#destroy
+                   POST   /cart/:item_id(.:format)                                    cart#add_item
+              cart GET    /cart(.:format)                                             cart#show
+                   DELETE /cart(.:format)                                             cart#empty
+                   DELETE /cart/:item_id(.:format)                                    cart#remove_item
+                   PATCH  /cart/:item_id/add_quantity(.:format)                       cart#add_quantity
+                   PATCH  /cart/:item_id/decrease-quantity(.:format)                  cart#decrease_quantity
+        order_ship PATCH  /orders/:order_id/ship(.:format)                            orders#ship
+            orders POST   /orders(.:format)                                           orders#create
+         new_order GET    /orders/new(.:format)                                       orders#new
+             order GET    /orders/:id(.:format)                                       orders#show
+                   DELETE /orders/:id(.:format)                                       orders#destroy
+          new_user GET    /users/register(.:format)                                   users#new
+             users POST   /users(.:format)                                            users#create
+                   GET    /users/new(.:format)                                        users#new
+     profile_admin GET    /profile/:profile_id/admin(.:format)                        profile#index
+     profile_index GET    /profile(.:format)                                          profile#index
+                   POST   /profile(.:format)                                          profile#create
+       new_profile GET    /profile/new(.:format)                                      profile#new
+      edit_profile GET    /profile/:id/edit(.:format)                                 profile#edit
+           profile PATCH  /profile/:id(.:format)                                      profile#update
+                   PUT    /profile/:id(.:format)                                      profile#update
+                   DELETE /profile/:id(.:format)                                      profile#destroy
+    password_index GET    /password(.:format)                                         password#index
+                   POST   /password(.:format)                                         password#create
+      new_password GET    /password/new(.:format)                                     password#new
+     edit_password GET    /password/:id/edit(.:format)                                password#edit
+          password GET    /password/:id(.:format)                                     password#show
+                   PATCH  /password/:id(.:format)                                     password#update
+                   PUT    /password/:id(.:format)                                     password#update
+                   DELETE /password/:id(.:format)                                     password#destroy
+             login GET    /login(.:format)                                            sessions#new
+                   POST   /login(.:format)                                            sessions#create
+    profile_orders GET    /profile/orders(.:format)                                   profile_orders#index
+                   GET    /profile/orders/:id(.:format)                               profile_orders#show
+merchant_items_new GET    /merchant/items/new(.:format)                               merchant/items#new
+                   POST   /merchant/items(.:format)                                   merchant/items#create
+                   GET    /merchant/items/:item_id/edit(.:format)                     merchant/items#edit
+                   PATCH  /merchant/items/:item_id(.:format)                          merchant/items#update
+                   DELETE /merchant/items/:item_id(.:format)                          merchant/items#destroy
+     merchant_root GET    /merchant(.:format)                                         merchant/dashboard#index
+                   GET    /merchant/items(.:format)                                   merchant/items#index
+merchant_dashboard GET    /merchant/dashboard(.:format)                               merchant/dashboard#index
+                   GET    /merchant/orders/:order_id(.:format)                        merchant/orders#show
+                   PATCH  /merchant/items/:item_id/orders/:order_id(.:format)         merchant/orders#update
+        admin_root GET    /admin(.:format)                                            admin/dashboard#show
+     admin_profile GET    /admin/profile(.:format)                                    admin/profile#index
+   admin_merchants GET    /admin/merchants(.:format)                                  admin/merchant#index
+             admin PATCH  /admin/merchants/:id/update(.:format)                       admin/merchant#update
+                   GET    /admin/merchants/:merchant_id/items(.:format)               admin/items#index
+                   DELETE /admin/merchants/:merchant_id/items/:item_id(.:format)      admin/items#destroy
+                   POST   /admin/merchants/:merchant_id/items(.:format)               admin/items#create
+                   GET    /admin/merchants/:merchant_id/items/new(.:format)           admin/items#new
+                   GET    /admin/merchants/:merchant_id/items/:item_id/edit(.:format) admin/items#edit
+                   PATCH  /admin/merchants/:merchant_id/items/:item_id(.:format)      admin/items#update
+                   GET    /admin/merchants/:id(.:format)                              admin/merchant#show
+   admin_dashboard GET    /admin/dashboard(.:format)                                  admin/dashboard#show
+       admin_users GET    /admin/users(.:format)                                      admin/users#index
+                   GET    /admin/users/:user_id(.:format)                             admin/users#show
+      logout_index GET    /logout(.:format)                                           logout#index

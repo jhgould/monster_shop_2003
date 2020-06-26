@@ -1,6 +1,7 @@
 class ItemsController<ApplicationController
 
   def index
+    # binding.pry
     if params[:merchant_id]
       @merchant = Merchant.find(params[:merchant_id])
       @items = @merchant.items
@@ -31,7 +32,6 @@ class ItemsController<ApplicationController
   end
 
   def edit
-
     @item = Item.find(params[:id])
   end
 

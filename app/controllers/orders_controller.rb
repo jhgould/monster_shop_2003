@@ -29,7 +29,8 @@ class OrdersController <ApplicationController
   end
 
   def ship
-    order = Order.find(params[:id])
+    # binding.pry
+    order = Order.find(params[:order_id])
     order.update!(status: "shipped")
     redirect_to "/admin/dashboard"
   end
